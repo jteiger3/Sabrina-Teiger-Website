@@ -407,6 +407,40 @@
       color: var(--mauve-pale);
     }
 
+    /* ── SUBSCRIBE ── */
+    #subscribe {
+      background: var(--bg);
+      padding: 80px 60px;
+      text-align: center;
+      border-top: 1px solid rgba(180,150,170,0.2);
+    }
+
+    #subscribe h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      color: var(--mauve-mid);
+      margin-bottom: 12px;
+    }
+
+    #subscribe p {
+      font-size: 1rem;
+      color: var(--mauve-light);
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .substack-embed-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .substack-embed-wrap iframe {
+      border-radius: 16px !important;
+      box-shadow: 0 4px 24px rgba(100,70,90,0.1);
+      max-width: 100%;
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -433,9 +467,14 @@
 
     /* ── FADE-IN ANIMATIONS ── */
     .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.hidden {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
     .fade-in.visible {
@@ -510,6 +549,15 @@
     </div>
   </section>
 
+  <!-- SUBSCRIBE -->
+  <section id="subscribe">
+    <h2 class="fade-in">Stay connected</h2>
+    <p class="fade-in" style="transition-delay: 0.1s;">Get Sabrina's latest writings on self discovery delivered straight to your inbox.</p>
+    <div class="substack-embed-wrap fade-in" style="transition-delay: 0.2s;">
+      <iframe src="https://sabrinateiger.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white;" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-text fade-in">
@@ -560,13 +608,17 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
+          e.target.classList.remove('hidden');
           e.target.classList.add('visible');
           observer.unobserve(e.target);
         }
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.classList.add('hidden');
+      observer.observe(el);
+    });
 
     // Formspree AJAX submission
     const form = document.getElementById('contactForm');
