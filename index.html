@@ -61,9 +61,9 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: 1.1rem;
-      color: var(--mauve-light);
-      letter-spacing: 0.03em;
+      font-size: 1.2rem;
+      color: var(--mauve-mid);
+      letter-spacing: 0.02em;
     }
 
     .nav-links {
@@ -386,9 +386,9 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: 1.1rem;
-      color: var(--mauve-light);
-      letter-spacing: 0.03em;
+      font-size: 1.2rem;
+      color: var(--mauve-mid);
+      letter-spacing: 0.02em;
     }
 
     footer .footer-email {
@@ -412,14 +412,16 @@
       color: var(--mauve-pale);
     }
 
-    /* ── MOBILE ── */
+    /* ── TABLET ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
 
+      .nav-brand span { font-size: 1rem; }
+
       #hero, #about, #contact {
         grid-template-columns: 1fr;
-        padding: 60px 28px;
-        gap: 40px;
+        padding: 50px 28px;
+        gap: 36px;
       }
 
       #writings { padding: 70px 28px; }
@@ -428,12 +430,99 @@
       .hero-buttons { justify-content: center; }
 
       .hero-image-wrap { order: -1; }
-      .hero-image-wrap img { max-width: 280px; aspect-ratio: 3/4; }
+      .hero-image-wrap img { max-width: 300px; }
 
       .about-image img { max-width: 100%; }
       .contact-image { display: none; }
 
       footer { padding: 50px 24px 32px; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      /* Nav */
+      nav {
+        padding: 14px 18px;
+        gap: 10px;
+      }
+
+      .nav-brand img { width: 36px; height: 36px; }
+      .nav-brand span { font-size: 0.85rem; }
+
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.82rem; }
+
+      .btn-dark {
+        padding: 8px 16px;
+        font-size: 0.82rem;
+      }
+
+      /* Hero */
+      #hero {
+        padding: 36px 20px 48px;
+        gap: 28px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.6rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-text p,
+      .hero-text .hero-tagline {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+
+      .hero-text .hero-tagline { margin-bottom: 28px; }
+
+      .hero-image-wrap img {
+        max-width: 240px;
+        aspect-ratio: 2/3;
+      }
+
+      .hero-caption { font-size: 0.95rem; }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-buttons a { width: 200px; text-align: center; }
+
+      /* Writings */
+      #writings { padding: 56px 20px; }
+
+      #writings h2 { font-size: 2rem; margin-bottom: 28px; }
+      #writings p { font-size: 0.93rem; margin-bottom: 32px; }
+
+      /* About */
+      #about {
+        padding: 56px 20px;
+        gap: 28px;
+      }
+
+      .about-text h2 { font-size: 2rem; }
+      .about-text p { font-size: 0.93rem; }
+
+      /* Contact */
+      #contact {
+        padding: 56px 20px;
+        gap: 28px;
+      }
+
+      .contact-text h2 { font-size: 1.8rem; }
+      .contact-text p { font-size: 0.93rem; }
+
+      .btn-submit { font-size: 0.95rem; }
+
+      /* Footer */
+      footer { padding: 44px 20px 28px; gap: 10px; }
+      footer img { width: 52px; height: 52px; }
+      footer .footer-name { font-size: 1rem; }
+      footer .footer-quote { font-size: 0.9rem; }
+      footer .footer-copy { font-size: 0.8rem; }
     }
 
     /* ── FADE-IN ANIMATIONS ── */
