@@ -172,7 +172,7 @@
       max-width: 380px;
       border-radius: 16px;
       object-fit: cover;
-      object-position: top;
+      object-position: center 15%;
       aspect-ratio: 2/3;
       box-shadow: 0 8px 40px rgba(100,70,90,0.12);
     }
@@ -407,40 +407,6 @@
       color: var(--mauve-pale);
     }
 
-    /* ── SUBSCRIBE ── */
-    #subscribe {
-      background: var(--bg);
-      padding: 80px 60px;
-      text-align: center;
-      border-top: 1px solid rgba(180,150,170,0.2);
-    }
-
-    #subscribe h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      color: var(--mauve-mid);
-      margin-bottom: 12px;
-    }
-
-    #subscribe p {
-      font-size: 1rem;
-      color: var(--mauve-light);
-      margin-bottom: 36px;
-      font-weight: 300;
-    }
-
-    .substack-embed-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .substack-embed-wrap iframe {
-      border-radius: 16px !important;
-      box-shadow: 0 4px 24px rgba(100,70,90,0.1);
-      max-width: 100%;
-    }
-
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -549,15 +515,6 @@
     </div>
   </section>
 
-  <!-- SUBSCRIBE -->
-  <section id="subscribe">
-    <h2 class="fade-in">Stay connected</h2>
-    <p class="fade-in" style="transition-delay: 0.1s;">Get Sabrina's latest writings on self discovery delivered straight to your inbox.</p>
-    <div class="substack-embed-wrap fade-in" style="transition-delay: 0.2s;">
-      <iframe src="https://sabrinateiger.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white;" frameborder="0" scrolling="no"></iframe>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-text fade-in">
@@ -598,7 +555,7 @@
   <footer>
     <img src="Logo.png" alt="Sabrina Teiger Logo" />
     <span class="footer-name">Sabrina Teiger, MA, MSS</span>
-    <a href="/cdn-cgi/l/email-protection#2c5f4d4e5e45424d5849454b495e1d1f6c4b414d4540024f4341" class="footer-email"><span class="__cf_email__" data-cfemail="5d2e3c3f2f34333c2938343a382f6c6e1d3a303c3431733e3230">[email&#160;protected]</span></a>
+
     <p class="footer-quote">Love Is The Bridge Between You And Everything · Rumi</p>
     <p class="footer-copy">© 2026 Sabrina Teiger. All rights reserved.</p>
   </footer>
