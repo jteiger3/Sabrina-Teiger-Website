@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sabrina Teiger, MA, MSS</title>
   <link rel="icon" href="Logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,7 +25,7 @@
 
     body {
       background: var(--bg);
-      font-family: 'Jost', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--text-body);
       font-weight: 300;
       overflow-x: hidden;
@@ -58,7 +58,7 @@
     }
 
     .nav-brand span {
-      font-family: 'Jost', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       font-size: 1rem;
       color: var(--mauve-dark);
@@ -120,40 +120,44 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      min-height: calc(100vh - 83px);
-      padding: 80px 60px;
+      padding: 48px 60px;
       gap: 60px;
     }
 
-    .hero-text { max-width: 560px; }
+    .hero-text {
+      max-width: 580px;
+      text-align: center;
+    }
 
     .hero-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 4.2rem);
-      font-weight: 300;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+      font-weight: 400;
       color: var(--mauve-mid);
-      line-height: 1.15;
-      margin-bottom: 32px;
+      line-height: 1.12;
+      margin-bottom: 28px;
+      text-align: center;
     }
 
     .hero-text p {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.85;
       color: var(--mauve-mid);
       text-align: center;
       margin-bottom: 16px;
     }
 
     .hero-text .hero-tagline {
-      font-size: 1rem;
+      font-size: 1.05rem;
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .hero-image-wrap {
@@ -168,12 +172,13 @@
       max-width: 380px;
       border-radius: 16px;
       object-fit: cover;
-      aspect-ratio: 3/4;
+      object-position: top;
+      aspect-ratio: 2/3;
       box-shadow: 0 8px 40px rgba(100,70,90,0.12);
     }
 
     .hero-caption {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1.1rem;
       color: var(--mauve-mid);
@@ -190,9 +195,9 @@
     }
 
     #writings h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 300;
+      font-weight: 400;
       color: #e8d5e0;
       margin-bottom: 48px;
       line-height: 1.2;
@@ -244,9 +249,9 @@
     }
 
     .about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 3.5vw, 3rem);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--mauve-light);
       margin-bottom: 24px;
     }
@@ -269,7 +274,7 @@
     }
 
     .contact-text h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 300;
       color: var(--mauve-mid);
@@ -298,7 +303,7 @@
       border: 1.5px solid var(--mauve-pale);
       border-radius: 10px;
       padding: 12px 16px;
-      font-family: 'Jost', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       font-weight: 300;
       color: var(--text-body);
@@ -320,7 +325,7 @@
       border: none;
       padding: 14px;
       border-radius: 10px;
-      font-family: 'Jost', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 400;
       cursor: pointer;
@@ -374,7 +379,7 @@
     }
 
     footer .footer-name {
-      font-family: 'Jost', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       font-size: 1rem;
       color: var(--mauve-mid);
@@ -391,7 +396,7 @@
     footer .footer-email:hover { color: var(--mauve-dark); }
 
     footer .footer-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1rem;
       color: var(--mauve-light);
@@ -545,12 +550,12 @@
   <footer>
     <img src="Logo.png" alt="Sabrina Teiger Logo" />
     <span class="footer-name">Sabrina Teiger, MA, MSS</span>
-    <a href="mailto:sabrinateiger13@gmail.com" class="footer-email">sabrinateiger13@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#2c5f4d4e5e45424d5849454b495e1d1f6c4b414d4540024f4341" class="footer-email"><span class="__cf_email__" data-cfemail="5d2e3c3f2f34333c2938343a382f6c6e1d3a303c3431733e3230">[email&#160;protected]</span></a>
     <p class="footer-quote">Love Is The Bridge Between You And Everything · Rumi</p>
     <p class="footer-copy">© 2026 Sabrina Teiger. All rights reserved.</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -586,14 +591,3 @@
           success.style.display = 'block';
           btn.style.display = 'none';
         } else {
-          btn.textContent = 'Something went wrong — try again';
-          btn.disabled = false;
-        }
-      } catch {
-        btn.textContent = 'Something went wrong — try again';
-        btn.disabled = false;
-      }
-    });
-  </script>
-</body>
-</html>
