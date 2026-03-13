@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabrina Teiger, MA, MSS</title>
+  <link rel="icon" href="Logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f0f6;
+      --mauve-dark: #6b4f5c;
+      --mauve-mid: #8a6a78;
+      --mauve-light: #b89aaa;
+      --mauve-pale: #d4b8c7;
+      --section-dark: #7a5f6e;
+      --text-body: #5c4a54;
+      --white: #ffffff;
+      --btn-dark: #5c4a5a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Jost', sans-serif;
+      color: var(--text-body);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(180,150,170,0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .nav-brand span {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--mauve-dark);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--mauve-mid);
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--mauve-dark); }
+
+    .btn-dark {
+      background: var(--btn-dark);
+      color: var(--white);
+      padding: 10px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-dark:hover { background: var(--mauve-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--btn-dark);
+      padding: 10px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      border: 1.5px solid var(--btn-dark);
+      letter-spacing: 0.02em;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--btn-dark);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: calc(100vh - 83px);
+      padding: 80px 60px;
+      gap: 60px;
+    }
+
+    .hero-text { max-width: 560px; }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.2rem);
+      font-weight: 300;
+      color: var(--mauve-mid);
+      line-height: 1.15;
+      margin-bottom: 32px;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--mauve-mid);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .hero-text .hero-tagline {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      box-shadow: 0 8px 40px rgba(100,70,90,0.12);
+    }
+
+    .hero-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--mauve-mid);
+      text-align: center;
+      max-width: 340px;
+      line-height: 1.5;
+    }
+
+    /* ── WRITINGS / SUBSTACK ── */
+    #writings {
+      background: var(--section-dark);
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    #writings h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: #e8d5e0;
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    #writings p {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #e8d5e0;
+      font-weight: 300;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--section-dark);
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-white:hover {
+      background: #e8d5e0;
+      transform: translateY(-2px);
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 60px;
+      gap: 80px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      box-shadow: 0 8px 40px rgba(100,70,90,0.12);
+    }
+
+    .about-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--mauve-light);
+      margin-bottom: 24px;
+    }
+
+    .about-text p {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--mauve-mid);
+      margin-bottom: 36px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 60px;
+      gap: 80px;
+      background: var(--bg);
+    }
+
+    .contact-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--mauve-mid);
+      margin-bottom: 10px;
+    }
+
+    .contact-text p {
+      font-size: 0.95rem;
+      color: var(--mauve-light);
+      margin-bottom: 32px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: var(--mauve-mid);
+      font-weight: 400;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: transparent;
+      border: 1.5px solid var(--mauve-pale);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-body);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--mauve-mid);
+    }
+
+    .form-group textarea { height: 120px; }
+
+    .btn-submit {
+      background: var(--btn-dark);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 4px;
+    }
+
+    .btn-submit:hover { background: var(--mauve-dark); transform: translateY(-1px); }
+
+    .contact-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      box-shadow: 0 8px 40px rgba(100,70,90,0.15);
+      margin-left: auto;
+      display: block;
+    }
+
+    /* success message */
+    .form-success {
+      display: none;
+      background: #e8d5e0;
+      color: var(--mauve-dark);
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid rgba(180,150,170,0.25);
+      padding: 60px 60px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    footer img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--mauve-mid);
+      letter-spacing: 0.04em;
+    }
+
+    footer .footer-email {
+      color: var(--mauve-light);
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer .footer-email:hover { color: var(--mauve-dark); }
+
+    footer .footer-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--mauve-light);
+    }
+
+    footer .footer-copy {
+      font-size: 0.85rem;
+      color: var(--mauve-pale);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+
+      #hero, #about, #contact {
+        grid-template-columns: 1fr;
+        padding: 60px 28px;
+        gap: 40px;
+      }
+
+      #writings { padding: 70px 28px; }
+
+      .hero-text { max-width: 100%; text-align: center; }
+      .hero-buttons { justify-content: center; }
+
+      .hero-image-wrap { order: -1; }
+      .hero-image-wrap img { max-width: 280px; aspect-ratio: 3/4; }
+
+      .about-image img { max-width: 100%; }
+      .contact-image { display: none; }
+
+      footer { padding: 50px 24px 32px; }
+    }
+
+    /* ── FADE-IN ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-brand">
+      <img src="Logo.png" alt="Sabrina Teiger Logo" />
+      <span>Sabrina Teiger, MA, MSS</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.linkedin.com/in/sabrina-teiger-668b343b3/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="YOUR_SUBSTACK_LINK_HERE" target="_blank" rel="noopener">Substack</a>
+      <a href="#contact" class="btn-dark">Get in touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text fade-in">
+      <h1>Coming home<br>to love</h1>
+      <p>Welcome!<br>
+         Are you ready to:<br>
+         Experience more inner peace?<br>
+         Become more tender and kind towards yourself?<br>
+         Release what no longer serves you?
+      </p>
+      <p class="hero-tagline">
+        This work is for people who are inspired to create a loving, nurturing, and caring inner environment&nbsp;~ inner sanctuary.
+      </p>
+      <p class="hero-tagline">
+        Together, we will explore new ways of cultivating an inner life that brings you joy!
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-dark">Get in touch</a>
+        <a href="YOUR_SUBSTACK_LINK_HERE" target="_blank" rel="noopener" class="btn-outline">Substack</a>
+        <a href="https://www.linkedin.com/in/sabrina-teiger-668b343b3/" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap fade-in" style="transition-delay: 0.15s;">
+      <img src="Image1.jpg" alt="Sabrina Teiger" />
+      <p class="hero-caption"><em>I am here to support you in becoming the person you want to come home to.</em></p>
+    </div>
+  </section>
+
+  <!-- WRITINGS / SUBSTACK -->
+  <section id="writings">
+    <h2 class="fade-in">Read my writings on<br>self discovery</h2>
+    <p class="fade-in" style="transition-delay: 0.1s;">
+      Sabrina Teiger is a transformational guide who believes that the most significant journey we ever take is the one inward. Her practice is centered on uncovering the barriers people have built around their hearts and supports them in connecting with their innate loving. This connection fosters a way of living that is resilient and authentic. Through her strong co-creative relationship with Spirit, and personal transformative experience, she helps people learn to love and care for themselves in new ways.
+    </p>
+    <a href="YOUR_SUBSTACK_LINK_HERE" target="_blank" rel="noopener" class="btn-white fade-in" style="transition-delay: 0.2s;">Read my Substack</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-image fade-in">
+      <img src="Image2.jpg" alt="Sabrina and family" />
+    </div>
+    <div class="about-text fade-in" style="transition-delay: 0.15s;">
+      <h2>About me</h2>
+      <p>
+        Sabrina Teiger is a personal development coach dedicated to helping individuals rediscover the profound love that exists within themselves. Through compassion and clarity, she guides you on a transformative journey of inner connection and empowers you to live an authentic, soulful life. Sabrina has a Masters in Spiritual Psychology with an emphasis in Consciousness, Health and Healing as well as a Masters in Spiritual Science. She has been married over 30 years, has three boys and currently lives in Ojai, CA.
+      </p>
+      <a href="#contact" class="btn-dark">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-text fade-in">
+      <h2>Get in touch</h2>
+      <p>Ready to start your journey inward? Send a message and I'll get back to you shortly.</p>
+
+      <!-- FORMSPREE FORM — replace YOUR_FORMSPREE_ID below -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+        method="POST"
+        id="contactForm"
+      >
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required placeholder="" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+        <div class="form-success" id="formSuccess">
+          ✓ Thank you! Your message has been sent. Sabrina will be in touch soon.
+        </div>
+      </form>
+    </div>
+    <div class="contact-image fade-in" style="transition-delay: 0.15s;">
+      <img src="Image3.jpg" alt="Heart shaped canyon" />
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="Logo.png" alt="Sabrina Teiger Logo" />
+    <span class="footer-name">Sabrina Teiger, MA, MSS</span>
+    <a href="mailto:sabrinateiger13@gmail.com" class="footer-email">sabrinateiger13@gmail.com</a>
+    <p class="footer-quote">Love Is The Bridge Between You And Everything · Rumi</p>
+    <p class="footer-copy">© 2026 Sabrina Teiger. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Formspree AJAX submission
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          success.style.display = 'block';
+          btn.style.display = 'none';
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
